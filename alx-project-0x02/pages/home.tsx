@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PostModal from "@/components/common/PostModal";
 import Card from "@/components/common/Card";
+import Header from "@/components/layout/Header"; // ✅ Import Header
 
 export default function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -10,8 +11,17 @@ export default function HomePage() {
     setPosts([newPost, ...posts]); // add new post at top
   };
 
+  // Navigation links for the header
+  const navLinks = [
+    { label: "Home", href: "/home" },
+    { label: "About", href: "/about" },
+    { label: "Posts", href: "/posts" },
+  ];
+
   return (
     <>
+      <Header title="ALX Project" links={navLinks} /> {/* ✅ Use Header */}
+
       <section className="flex flex-col items-center justify-center min-h-[50vh] text-center">
         <h1 className="text-4xl font-bold text-blue-600 mb-4">
           Welcome to the Home Page 🏠
@@ -33,11 +43,7 @@ export default function HomePage() {
 
       <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
         {posts.map((post, index) => (
-          <Card
-            key={index}
-            title={`Post #${index + 1}`}
-            content={post}
-          />
+          <Card key={index} title={`Post #${index + 1}`} content={post} />
         ))}
       </div>
     </>
