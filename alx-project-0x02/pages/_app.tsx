@@ -7,6 +7,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const navLinks = [
     { label: "Home", href: "/home" },
     { label: "About", href: "/about" },
+    { label: "Posts", href: "/posts"}
   ];
 
   return (
