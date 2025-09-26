@@ -1,9 +1,8 @@
-import Header from '@/components/layout/Header'
 
 export default function Home() {
   return (
-    <Header title="Alx Project"/>
-  )
-  
-  
+    <h1 className="text-center text-2xl font-bold">
+      Welcome to ALX Project 🚀
+    </h1>
+  );
 }

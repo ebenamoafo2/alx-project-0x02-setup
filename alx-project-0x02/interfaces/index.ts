@@ -6,4 +6,5 @@ export interface NavLink {
 
 export interface HeaderProps {
   title: string;
+  links: { href: string; label: string }[];
 }
